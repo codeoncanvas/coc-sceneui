@@ -10,6 +10,8 @@
 // Copyright (c) 2016, Code on Canvas Pty Ltd
 
 #include "SceneButton.h"
+#include "cocSceneTexture.h"
+#include "cocAssetsCI.h"
 
 namespace coc {
 
@@ -34,10 +36,17 @@ SceneButtonRef SceneButton::create(const coc::scene::ObjectRef & object) {
     if(object == nullptr) {
         return nullptr;
     }
+    
+    std::string assetID = ((const coc::scene::Texture *)object.get())->assetID;
+    
+    coc::Assets * assets = coc::scene::getAssets();
+    
     SceneButtonRef button(new SceneButton());
     button->copyFrom(object);
     button->objectType = ObjectTypeCustom;
     button->getParent()->replaceChild(object, button); // replace object.
+    
+    button->texUp = ((coc::AssetsCI *)assets)->getTextureRef(assetID);
     return button;
 }
 
