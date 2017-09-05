@@ -26,6 +26,8 @@ public:
     SceneTextInsertionMarker(std::string objID="");
     ~SceneTextInsertionMarker();
     
+    static SceneTextInsertionMarkerRef create(std::string assetPath);
+    
     void exit();
     
     void setup() override;
@@ -41,6 +43,7 @@ public:
     glm::vec2 markerPos;
     
     ci::gl::TextureRef insertionMarker;
+    std::string assetPath;
     bool bEnabled;
     bool bVisible;
     

@@ -10,6 +10,7 @@
 // Copyright (c) 2017, Code on Canvas Pty Ltd
 
 #include "SceneTextInsertionMarker.h"
+//#include "cocSceneTexture.h"
 
 namespace coc {
 
@@ -25,10 +26,21 @@ bVisible(true) {
     
 }
     
+SceneTextInsertionMarker::~SceneTextInsertionMarker() {
+    //
+}
+    
 void SceneTextInsertionMarker::exit() {
     
     exit();
     
+}
+    
+SceneTextInsertionMarkerRef SceneTextInsertionMarker::create(std::string _assetPath) {
+    SceneTextInsertionMarkerRef marker(new SceneTextInsertionMarker());
+    marker->objectType = ObjectTypeCustom;
+    marker->assetPath = _assetPath;
+    return marker;
 }
     
 void SceneTextInsertionMarker::setup() {
@@ -37,7 +49,7 @@ void SceneTextInsertionMarker::setup() {
     
     markerPos = vec2(0,0);
     
-    insertionMarker = gl::Texture::create( loadImage( getAssetPath("svg/text/insertionMarker.png").string() ) );
+    insertionMarker = gl::Texture::create( loadImage( getAssetPath( assetPath ) ) );
 
 }
     
