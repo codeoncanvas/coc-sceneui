@@ -219,8 +219,10 @@ void SceneKeyboard::update() {
         bAdd = bAdd || (keyPressed->type == SceneKeyboardKey::KeyNum);
         bAdd = bAdd || (keyPressed->type == SceneKeyboardKey::KeyExtra);
         if(bAdd) {
-            text += keyPressed->character;
-            bTextChanged = true;
+            if (!maxChars || (maxChars && text.length()<maxChars) ) {
+                text += keyPressed->character;
+                bTextChanged = true;
+            }
         }
         
         bool bDelete = false;
@@ -290,5 +292,38 @@ void SceneKeyboard::drawSelf() {
     coc::scene::Object::drawSelf();
 }
 
-    
+
+//--------------------------------------------------------------
+
+void SceneKeyboard::setKeyEventsEnabled( bool b )
+{
+    if (keyEventsEnabled == b) return;
+    keyEventsEnabled = b;
+    if (keyEventsEnabled) {
+        cbKeyDown = getWindow()->getSignalKeyDown().connect(  std::bind( &SceneKeyboard::keyDown, this, std::placeholders::_1) );
+    }
+    else {
+        cbKeyDown.disconnect();
+    }
+
+}
+
+void SceneKeyboard::keyDown( ci::app::KeyEvent event )
+{
+
+    auto keyCode = event.getCode();
+    if (keyCode == KeyEvent::KEY_DELETE || keyCode == KeyEvent::KEY_BACKSPACE ) {
+        text = text.substr(0, text.length()-1);
+    }
+    else {
+        //todo: better support for special chars
+
+        if (!maxChars || (maxChars && text.length()<maxChars) ) {
+            text += event.getChar();
+        }
+    }
+
+}
+
+
 };

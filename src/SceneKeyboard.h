@@ -84,6 +84,15 @@ public:
     void update() override;
     
     void drawSelf() override;
+
+    bool keyEventsEnabled = false;
+    ci::signals::ScopedConnection cbKeyDown;
+    void setKeyEventsEnabled( bool b );
+    void keyDown( ci::app::KeyEvent event );
+
+    //todo: refactor maxChars to be in field instead
+    int maxChars = 0;
+    void setMaxChars( int i ) { maxChars = i; }
     
     std::vector<SceneKeyboardKeyRef> keysAll;
     std::vector<SceneKeyboardKeyRef> keysAbcLower;
