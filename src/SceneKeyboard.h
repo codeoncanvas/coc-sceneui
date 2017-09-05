@@ -90,9 +90,8 @@ public:
     void setKeyEventsEnabled( bool b );
     void keyDown( ci::app::KeyEvent event );
 
-    //todo: refactor maxChars to be in field instead
-    int maxChars = 0;
-    void setMaxChars( int i ) { maxChars = i; }
+    //can override if you want to limit num or type of chars etc
+    virtual void addChar( std::string ch ) { text += ch; };
     
     std::vector<SceneKeyboardKeyRef> keysAll;
     std::vector<SceneKeyboardKeyRef> keysAbcLower;

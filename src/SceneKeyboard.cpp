@@ -219,10 +219,8 @@ void SceneKeyboard::update() {
         bAdd = bAdd || (keyPressed->type == SceneKeyboardKey::KeyNum);
         bAdd = bAdd || (keyPressed->type == SceneKeyboardKey::KeyExtra);
         if(bAdd) {
-            if (!maxChars || (maxChars && text.length()<maxChars) ) {
-                text += keyPressed->character;
-                bTextChanged = true;
-            }
+            addChar( keyPressed->character );
+            bTextChanged = true;
         }
         
         bool bDelete = false;
@@ -317,10 +315,9 @@ void SceneKeyboard::keyDown( ci::app::KeyEvent event )
     }
     else {
         //todo: better support for special chars
-
-        if (!maxChars || (maxChars && text.length()<maxChars) ) {
-            text += event.getChar();
-        }
+        std::string tmp = "";
+        tmp += event.getChar();
+        addChar( tmp );
     }
 
 }
