@@ -188,7 +188,7 @@ void SceneKeyboard::setup() {
             keysNum.push_back(key);
         }
         
-        key->btn->bDebug = true;
+        key->btn->bDebug = false;
         
 //        addChild(key->btn);
     }
