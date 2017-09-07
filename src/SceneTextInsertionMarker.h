@@ -26,7 +26,10 @@ public:
     SceneTextInsertionMarker(std::string objID="");
     ~SceneTextInsertionMarker();
     
-    static SceneTextInsertionMarkerRef create(std::string assetPath);
+    static SceneTextInsertionMarkerRef create(const glm::ivec2 & size);
+    static SceneTextInsertionMarkerRef create(int width, int height);
+    
+    void setMarkerColor(const ci::ColorA & value) { markerColor = value; }
     
     void exit();
     
@@ -41,9 +44,9 @@ public:
     void setOff() { bEnabled = false; };
     
     glm::vec2 markerPos;
+    ci::ColorA markerColor;
     
     ci::gl::TextureRef insertionMarker;
-    std::string assetPath;
     bool bEnabled;
     bool bVisible;
     

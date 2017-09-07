@@ -36,12 +36,18 @@ void SceneTextInsertionMarker::exit() {
     
 }
     
-SceneTextInsertionMarkerRef SceneTextInsertionMarker::create(std::string _assetPath) {
+SceneTextInsertionMarkerRef SceneTextInsertionMarker::create(const glm::ivec2 & size) {
+    return create(size.x, size.y);
+}
+    
+SceneTextInsertionMarkerRef SceneTextInsertionMarker::create(int width, int height) {
     SceneTextInsertionMarkerRef marker(new SceneTextInsertionMarker());
     marker->objectType = ObjectTypeCustom;
-    marker->assetPath = _assetPath;
+    marker->width = width;
+    marker->height = height;
     return marker;
 }
+
     
 void SceneTextInsertionMarker::setup() {
     
@@ -49,8 +55,6 @@ void SceneTextInsertionMarker::setup() {
     
     markerPos = vec2(0,0);
     
-    insertionMarker = gl::Texture::create( loadImage( getAssetPath( assetPath ) ) );
-
 }
     
 void SceneTextInsertionMarker::update() {
@@ -70,7 +74,9 @@ void SceneTextInsertionMarker::drawSelf() {
     
     if (bEnabled) {
         if (bVisible) {
-            gl::draw(insertionMarker, markerPos);
+            gl::color(markerColor);
+            Rectf cursor = Rectf(markerPos.x, markerPos.y, markerPos.x+this->width, markerPos.y+this->height );
+            gl::drawSolidRect(cursor);
         }
     }
 
