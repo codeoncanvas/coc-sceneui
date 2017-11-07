@@ -12,7 +12,7 @@
 #pragma once
 
 #include "SceneScrollView.h"
-#include "PopupSelectScrollbar.h"
+#include "SceneScrollbar.h"
 
 namespace coc {
 
@@ -29,11 +29,11 @@ public:
     static SceneScrollViewWithScrollbarRef create(const glm::ivec2 & size);
     static SceneScrollViewWithScrollbarRef create(int width, int height);
 
-    void setScrollbar(const PopupSelectScrollbarRef & value) { scrollbar = value; }
+    void setScrollbar(const SceneScrollbarRef & value) { scrollbar = value; }
 
     void update() override;
 
-    PopupSelectScrollbarRef scrollbar;
+    SceneScrollbarRef scrollbar;
 };
 
 };
