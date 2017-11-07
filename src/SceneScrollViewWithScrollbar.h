@@ -34,6 +34,7 @@ public:
     void update() override;
 
     SceneScrollbarRef scrollbar;
+
 };
 
 };
