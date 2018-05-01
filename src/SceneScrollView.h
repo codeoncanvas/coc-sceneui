@@ -59,6 +59,9 @@ public:
     ci::gl::TextureRef maskTexture;
 
     bool bDisablePoints = false; //useful if only wanting programmatic control instead touch/cursor
+
+	ci::vec2 screenToLocalContainer( ci::vec2 p );
+
 };
 
 };

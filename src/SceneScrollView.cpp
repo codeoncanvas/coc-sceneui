@@ -53,7 +53,7 @@ SceneScrollViewRef SceneScrollView::create(int width, int height) {
 //--------------------------------------------------------------
 void SceneScrollView::setup() {
 
-    container = coc::scene::Object::create();
+    container = coc::scene::Object::create("container");
 
     glm::ivec2 displaySize = glm::ivec2(width, height);
     
@@ -189,6 +189,16 @@ bool SceneScrollView::inside(glm::vec2 pos) {
     bInside = bInside && (pos.y >= 0);
     bInside = bInside && (pos.y <= height);
     return bInside;
+}
+
+//--------------------------------------------------------------
+
+ci::vec2 SceneScrollView::screenToLocalContainer( ci::vec2 p )
+{
+    vec2 scrollP = screenToLocal( p );
+    vec2 containerP = container->screenToLocal( scrollP );
+    containerP.x += getScrollPos().x;
+    return containerP;
 }
 
 };
