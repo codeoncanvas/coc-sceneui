@@ -143,7 +143,7 @@ void SceneScrollView::drawSelf() {
 
 //--------------------------------------------------------------
 void SceneScrollView::pointMoved(int pointX, int pointY, int pointID) {
-    coc::ScrollView::pointMoved(pointX, pointY, pointID);
+    if (!bDisablePoints) coc::ScrollView::pointMoved(pointX, pointY, pointID);
     
     glm::vec2 pos = screenToLocal(glm::vec2(pointX, pointY));
     if(inside(pos) == false) {
@@ -153,7 +153,7 @@ void SceneScrollView::pointMoved(int pointX, int pointY, int pointID) {
 }
 
 void SceneScrollView::pointPressed(int pointX, int pointY, int pointID) {
-    coc::ScrollView::pointPressed(pointX, pointY, pointID);
+    if (!bDisablePoints) coc::ScrollView::pointPressed(pointX, pointY, pointID);
 
     glm::vec2 pos = screenToLocal(glm::vec2(pointX, pointY));
     if(inside(pos) == false) {
@@ -163,7 +163,7 @@ void SceneScrollView::pointPressed(int pointX, int pointY, int pointID) {
 }
 
 void SceneScrollView::pointDragged(int pointX, int pointY, int pointID) {
-    coc::ScrollView::pointDragged(pointX, pointY, pointID);
+    if (!bDisablePoints) coc::ScrollView::pointDragged(pointX, pointY, pointID);
     
     glm::vec2 pos = screenToLocal(glm::vec2(pointX, pointY));
     if(inside(pos) == false) {
@@ -173,7 +173,7 @@ void SceneScrollView::pointDragged(int pointX, int pointY, int pointID) {
 }
 
 void SceneScrollView::pointReleased(int pointX, int pointY, int pointID) {
-    coc::ScrollView::pointReleased(pointX, pointY, pointID);
+    if (!bDisablePoints) coc::ScrollView::pointReleased(pointX, pointY, pointID);
     
     glm::vec2 pos = screenToLocal(glm::vec2(pointX, pointY));
     if(inside(pos) == false) {

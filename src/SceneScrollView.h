@@ -57,6 +57,8 @@ public:
     
     ci::gl::GlslProgRef maskShader;
     ci::gl::TextureRef maskTexture;
+
+    bool bDisablePoints = false; //useful if only wanting programmatic control instead touch/cursor
 };
 
 };
