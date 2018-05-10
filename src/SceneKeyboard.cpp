@@ -172,8 +172,9 @@ void SceneKeyboard::setup() {
 #if defined( COC_CI )
         coc::Assets * assets = coc::scene::getAssets();
         key->btn->texDown = ((coc::AssetsCI *)assets)->getTextureRef(keyDownObj->assetID);
+        key->btn->texUp = ((coc::AssetsCI *)assets)->getTextureRef(key->objID);
 #endif
-        keyDownObj0->getParent()->removeChild(keyDownObj0);
+         keyDownObj0->getParent()->removeChild(keyDownObj0);
         
         if(key->type == SceneKeyboardKey::KeyAbcLower) {
             
