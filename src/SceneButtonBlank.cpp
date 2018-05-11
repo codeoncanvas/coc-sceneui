@@ -40,10 +40,10 @@ SceneButtonBlankRef SceneButtonBlank::create(const coc::scene::ObjectRef & objec
 	button->objectType = ObjectTypeCustom;
 	button->setRect(ci::Rectf(0, 0, button->width, button->height));
 	if (replace) {
-		button->getParent()->replaceChild(object, button);
+		if (button->getParent()) button->getParent()->replaceChild(object, button);
 	}
 	else {
-		object->getParent()->addChild( button );
+		if (object->getParent()) object->getParent()->addChild( button );
 	}
 
 	return button;
