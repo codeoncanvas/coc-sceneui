@@ -94,6 +94,7 @@ public:
 
     //can override if you want to limit num or type of chars etc
     virtual void addChar( std::string ch ) { text += ch; };
+    virtual void addChar( char ch ) { text += ch; };
     
     std::vector<SceneKeyboardKeyRef> keysAll;
     std::vector<SceneKeyboardKeyRef> keysAbcLower;

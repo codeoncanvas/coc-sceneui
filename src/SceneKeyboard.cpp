@@ -323,15 +323,26 @@ void SceneKeyboard::setKeyEventsEnabled( bool b )
 void SceneKeyboard::keyDown( ci::app::KeyEvent event )
 {
 
+    if (event.isMetaDown() || event.isControlDown() || event.isAccelDown() || event.isAltDown())
+        return;
+
     auto keyCode = event.getCode();
-    if (keyCode == KeyEvent::KEY_DELETE || keyCode == KeyEvent::KEY_BACKSPACE ) {
-        text = text.substr(0, text.length()-1);
-    }
-    else {
-        //todo: better support for special chars
-        std::string tmp = "";
-        tmp += event.getChar();
-        addChar( tmp );
+
+    switch( keyCode ) {
+        case KeyEvent::KEY_DELETE:
+        case KeyEvent::KEY_BACKSPACE:
+            text = text.substr(0, text.length()-1);
+            break;
+        default:
+        {
+            char ch = event.getChar();
+            if ( ch == ' ' || isalnum( ch ) ) {
+                addChar( ch );
+            }
+
+        }
+            break;
+
     }
 
 }
