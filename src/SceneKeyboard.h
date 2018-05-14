@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include "SceneButton.h"
+#include "SceneKeyButton.h"
 
 namespace coc {
     
@@ -60,7 +60,7 @@ public:
     Type type;
     std::string objID;
     std::string character;
-    SceneButtonRef btn;
+    SceneKeyButtonRef btn;
 
 };
     
@@ -80,6 +80,8 @@ public:
     void exit();
     
     void setup() override;
+
+    void setCol( ci::ColorA colUpBg, ci::ColorA colUpFg, ci::ColorA colDownBg, ci::ColorA colDownFg);
     
     void update() override;
     

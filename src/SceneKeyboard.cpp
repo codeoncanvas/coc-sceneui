@@ -164,15 +164,18 @@ void SceneKeyboard::setup() {
     
     for(auto key : keysAll) {
         
-        key->btn = SceneButton::create( findObjectByID(key->objID) );
+        key->btn = SceneKeyButton::create( findObjectByID(key->objID) );
         key->btn->setup();
         string keyDownObjID = key->objID + "-down";
         coc::scene::TextureRef keyDownObj = std::static_pointer_cast<coc::scene::Texture>( findObjectByID(keyDownObjID) );
         coc::scene::ObjectRef keyDownObj0 = findObjectByID(keyDownObjID);
 #if defined( COC_CI )
         coc::Assets * assets = coc::scene::getAssets();
-        key->btn->texDown = ((coc::AssetsCI *)assets)->getTextureRef(keyDownObj->assetID);
-        key->btn->texUp = ((coc::AssetsCI *)assets)->getTextureRef(key->objID);
+        //todo: replace images with white bg/fg images
+        key->btn->texDownBg = ((coc::AssetsCI *)assets)->getTextureRef(keyDownObj->assetID);
+        key->btn->texDownFg = ((coc::AssetsCI *)assets)->getTextureRef(keyDownObj->assetID);
+        key->btn->texUpBg = ((coc::AssetsCI *)assets)->getTextureRef(key->objID);
+        key->btn->texUpFg = ((coc::AssetsCI *)assets)->getTextureRef(key->objID);
 #endif
          keyDownObj0->getParent()->removeChild(keyDownObj0);
         
@@ -198,7 +201,17 @@ void SceneKeyboard::setup() {
     bNumericChanged = true;
 
 }
-    
+
+void SceneKeyboard::setCol( ColorA colUpBg, ColorA colUpFg, ColorA colDownBg, ColorA colDownFg )
+{
+    for (auto k : keysAll) {
+        k->btn->colUpBg = colUpBg;
+        k->btn->colUpFg = colUpFg;
+        k->btn->colDownBg = colDownBg;
+        k->btn->colDownFg = colDownFg;
+    }
+}
+
 //--------------------------------------------------------------
 void SceneKeyboard::update() {
     
