@@ -112,6 +112,9 @@ public:
     bool bNumericChanged;
     bool bTextChanged;
 
+    //! Change prefix to look for in SVG before calling setup()
+    void setPrefix( std::string str) { prefix = str; }
+    std::string prefix = "keyboard-small";
 };
 
     

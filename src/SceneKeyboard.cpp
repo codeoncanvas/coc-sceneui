@@ -57,127 +57,129 @@ void SceneKeyboard::setup() {
     
     //first row
     
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/q", "q") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/w", "w") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/e", "e") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/r", "r") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/t", "t") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/y", "y") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/u", "u") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/i", "i") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/o", "o") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/p", "p") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/q", "q") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/w", "w") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/e", "e") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/r", "r") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/t", "t") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/y", "y") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/u", "u") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/i", "i") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/o", "o") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/p", "p") );
     
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/QQ", "Q") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/WW", "W") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/EE", "E") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/RR", "R") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/TT", "T") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/YY", "Y") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/UU", "U") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/II", "I") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/OO", "O") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/PP", "P") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/QQ", "Q") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/WW", "W") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/EE", "E") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/RR", "R") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/TT", "T") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/YY", "Y") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/UU", "U") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/II", "I") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/OO", "O") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/PP", "P") );
     
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/1", "1") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/2", "2") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/3", "3") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/4", "4") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/5", "5") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/6", "6") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/7", "7") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/8", "8") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/9", "9") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/0", "0") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/1", "1") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/2", "2") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/3", "3") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/4", "4") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/5", "5") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/6", "6") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/7", "7") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/8", "8") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/9", "9") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/0", "0") );
     
     //second row
     
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/a", "a") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/s", "s") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/d", "d") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/f", "f") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/g", "g") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/h", "h") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/j", "j") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/k", "k") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/l", "l") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/a", "a") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/s", "s") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/d", "d") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/f", "f") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/g", "g") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/h", "h") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/j", "j") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/k", "k") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/l", "l") );
     
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/AA", "A") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/SS", "S") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/DD", "D") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/FF", "F") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/GG", "G") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/HH", "H") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/JJ", "J") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/KK", "K") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/LL", "L") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/AA", "A") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/SS", "S") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/DD", "D") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/FF", "F") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/GG", "G") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/HH", "H") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/JJ", "J") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/KK", "K") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/LL", "L") );
     
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/slash", "/") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/pound", "#") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/dollar", "$") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/underscore", "_") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/ampersand", "&") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/hyphen", "-") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/plus", "+") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/left-paranthesis", "(") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/right-paranthesis", ")") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/slash", "/") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/pound", "#") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/dollar", "$") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/underscore", "_") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/ampersand", "&") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/hyphen", "-") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/plus", "+") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/left-parenthesis", "(") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/right-parenthesis", ")") );
     
     //third row
     
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/z", "z") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/x", "x") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/c", "c") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/v", "v") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/b", "b") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/n", "n") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, "keyboard/m", "m") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/z", "z") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/x", "x") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/c", "c") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/v", "v") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/b", "b") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/n", "n") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcLower, prefix + "/m", "m") );
     
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/ZZ", "Z") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/XX", "X") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/CC", "C") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/VV", "V") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/BB", "B") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/NN", "N") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, "keyboard/MM", "M") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/ZZ", "Z") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/XX", "X") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/CC", "C") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/VV", "V") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/BB", "B") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/NN", "N") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcUpper, prefix + "/MM", "M") );
     
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/comma", ",") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/doublequotes", "\"") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/singlequote", "'") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/colon", ":") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/semicolon", ";") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/exclamation", "!") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, "keyboard/question", "?") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/comma", ",") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/doublequotes", "\"") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/singlequote", "'") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/colon", ":") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/semicolon", ";") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/exclamation", "!") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyNum, prefix + "/question", "?") );
     
     //Other keys
     
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyExtra, "keyboard/at", "@") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyExtra, "keyboard/space", " ") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyExtra, "keyboard/dot", ".") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyExtra, "keyboard/com", ".com") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyExtra, prefix + "/at", "@") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyExtra, prefix + "/space", " ") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyExtra, prefix + "/dot", ".") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyExtra, prefix + "/com", ".com") );
     
-    keysAll.push_back( keyCapsInactive = SceneKeyboardKey::create(SceneKeyboardKey::KeyCaps, "keyboard/caps") );
-    keysAll.push_back( keyCapsActive = SceneKeyboardKey::create(SceneKeyboardKey::KeyCaps, "keyboard/caps-active") );
-    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyBackspace, "keyboard/backspace") );
-    keysAll.push_back( keyNumToggle = SceneKeyboardKey::create(SceneKeyboardKey::KeyNumToggle, "keyboard/num") );
-    keysAll.push_back( keyAbcToggle = SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcToggle, "keyboard/abc") );
+    keysAll.push_back( keyCapsInactive = SceneKeyboardKey::create(SceneKeyboardKey::KeyCaps, prefix + "/caps") );
+    keysAll.push_back( keyCapsActive = SceneKeyboardKey::create(SceneKeyboardKey::KeyCaps, prefix + "/caps-active") );
+    keysAll.push_back( SceneKeyboardKey::create(SceneKeyboardKey::KeyBackspace, prefix + "/backspace") );
+    keysAll.push_back( keyNumToggle = SceneKeyboardKey::create(SceneKeyboardKey::KeyNumToggle, prefix + "/num") );
+    keysAll.push_back( keyAbcToggle = SceneKeyboardKey::create(SceneKeyboardKey::KeyAbcToggle, prefix + "/abc") );
     
     
     for(auto key : keysAll) {
         
-        key->btn = SceneKeyButton::create( findObjectByID(key->objID) );
+        key->btn = SceneKeyButton::create( findObjectByID(key->objID + "-bg-up") );
         key->btn->setup();
-        string keyDownObjID = key->objID + "-down";
-        coc::scene::TextureRef keyDownObj = std::static_pointer_cast<coc::scene::Texture>( findObjectByID(keyDownObjID) );
-        coc::scene::ObjectRef keyDownObj0 = findObjectByID(keyDownObjID);
 #if defined( COC_CI )
         coc::Assets * assets = coc::scene::getAssets();
         //todo: replace images with white bg/fg images
-        key->btn->texDownBg = ((coc::AssetsCI *)assets)->getTextureRef(keyDownObj->assetID);
-        key->btn->texDownFg = ((coc::AssetsCI *)assets)->getTextureRef(keyDownObj->assetID);
-        key->btn->texUpBg = ((coc::AssetsCI *)assets)->getTextureRef(key->objID);
-        key->btn->texUpFg = ((coc::AssetsCI *)assets)->getTextureRef(key->objID);
+        key->btn->texDownBg = ((coc::AssetsCI *)assets)->getTextureRef(key->objID + "-bg-down");
+        key->btn->texDownFg = ((coc::AssetsCI *)assets)->getTextureRef(key->objID + "-fg-down");
+        key->btn->texUpBg = ((coc::AssetsCI *)assets)->getTextureRef(key->objID + "-bg-up");
+        key->btn->texUpFg = ((coc::AssetsCI *)assets)->getTextureRef(key->objID + "-fg-up");
 #endif
-         keyDownObj0->getParent()->removeChild(keyDownObj0);
+        auto downBG = findObjectByID(key->objID + "-bg-down");
+        downBG->getParent()->removeChild(downBG);
+        auto downFG = findObjectByID(key->objID + "-fg-down");
+        downFG->getParent()->removeChild(downFG);
+        auto upFG = findObjectByID(key->objID + "-fg-up");
+        upFG->getParent()->removeChild(upFG);
         
         if(key->type == SceneKeyboardKey::KeyAbcLower) {
             
