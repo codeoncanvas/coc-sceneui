@@ -72,7 +72,7 @@ class SceneKeyboard : public coc::scene::Object {
     
 public:
     
-    static SceneKeyboardRef create(const coc::scene::ObjectRef & object);
+    static SceneKeyboardRef create(const coc::scene::ObjectRef & object, bool replace = true);
     
     SceneKeyboard(std::string objID="");
     ~SceneKeyboard();

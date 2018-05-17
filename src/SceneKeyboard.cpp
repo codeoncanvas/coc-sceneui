@@ -22,10 +22,10 @@ using namespace ci::app;
 using namespace coc::scene;
     
 //--------------------------------------------------------------
-SceneKeyboardRef SceneKeyboard::create(const coc::scene::ObjectRef & object) {
+SceneKeyboardRef SceneKeyboard::create(const coc::scene::ObjectRef & object, bool replace ) {
     SceneKeyboardRef keyboard(new SceneKeyboard());
     keyboard->copyFrom(object);
-    if(keyboard->getParent()) {
+    if(replace && keyboard->getParent()) {
         keyboard->getParent()->replaceChild(object, keyboard); // replace object.
     }
     return keyboard;
