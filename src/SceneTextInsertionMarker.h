@@ -12,6 +12,7 @@
 #pragma once
 
 #include "cocSceneObject.h"
+#include "SceneText.h"
 
 namespace coc {
 
@@ -25,7 +26,8 @@ public:
     
     SceneTextInsertionMarker(std::string objID="");
     ~SceneTextInsertionMarker();
-    
+
+	static SceneTextInsertionMarkerRef create(const coc::scene::ObjectRef & object, bool replace = true);
     static SceneTextInsertionMarkerRef create(const glm::ivec2 & size);
     static SceneTextInsertionMarkerRef create(int width, int height);
     
@@ -43,12 +45,17 @@ public:
     
     void setOff() { bEnabled = false; };
     
-    glm::vec2 markerPos;
+    glm::vec2 markerPos = ci::vec2(0,0);
     ci::ColorA markerColor;
     
     ci::gl::TextureRef insertionMarker;
     bool bEnabled;
     bool bVisible;
+
+	SceneTextRef text = nullptr;
+    void setTextObject( SceneTextRef _text ) {
+		text = _text;
+    }
     
 };
     

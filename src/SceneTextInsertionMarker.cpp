@@ -35,7 +35,23 @@ void SceneTextInsertionMarker::exit() {
     exit();
     
 }
-    
+
+SceneTextInsertionMarkerRef SceneTextInsertionMarker::create(const coc::scene::ObjectRef & object, bool replace )
+{
+    if(object == nullptr) {
+        return nullptr;
+    }
+    SceneTextInsertionMarkerRef insert = SceneTextInsertionMarker::create( object->width, object->height );
+    insert->x = object->x;
+    insert->y = object->y;
+//    insert->markerPos.x = object->x;
+//    insert->markerPos.y = object->y;
+    if (replace && object->getParent()) {
+        object->getParent()->replaceChild(object, insert);
+    }
+    return insert;
+}
+
 SceneTextInsertionMarkerRef SceneTextInsertionMarker::create(const glm::ivec2 & size) {
     return create(size.x, size.y);
 }
@@ -53,11 +69,13 @@ void SceneTextInsertionMarker::setup() {
     
     coc::scene::Object::setup();
     
-    markerPos = vec2(0,0);
-    
 }
     
 void SceneTextInsertionMarker::update() {
+
+    if (text && text->tex) {
+        markerPos.x = text->tex->getWidth();
+    }
     
     int elapsedTime = getElapsedSeconds();
     if (elapsedTime % 2 == 0) {
