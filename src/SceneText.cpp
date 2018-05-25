@@ -92,7 +92,7 @@ void SceneText::adjustWidthAndAlignment( int newWidth, TextBox::Alignment alignm
             width = newWidth;
             break;
     }
-    textBox.setAlignment(  TextBox::Alignment::CENTER );
+    textBox.setAlignment( alignment );
     textBox.setSize( ivec2(width,textBox.getSize().y) );
 }
 
