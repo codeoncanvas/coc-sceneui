@@ -38,10 +38,18 @@ public:
     
     virtual void drawSelf() override;
 
+    //!must be called after changing text
 	void generateTexture();
-    
+
+	//!adjusts object size to max width of text with correct alignment
+	void adjustWidthAndAlignment( int newWidth, ci::TextBox::Alignment alignment );
+
+	ci::TextBox * getTextBox() { return &textBox; }
+	ci::gl::TextureRef getTexture() { return tex; }
+
     ci::TextBox textBox;
 	ci::gl::TextureRef tex;
+	bool bDebug;
     
 protected:
     

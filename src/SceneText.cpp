@@ -18,7 +18,8 @@ using namespace coc::scene;
 
 SceneText::SceneText(std::string objID) :
 coc::scene::Object(objID),
-textOffset(0,0) {
+textOffset(0,0),
+bDebug(false){
     //
 }
 
@@ -65,11 +66,34 @@ void SceneText::drawSelf() {
 
     ci::gl::ScopedModelMatrix pushModelMatrix;
     if (tex) gl::draw( tex, textOffset );
+    if (bDebug) {
+        gl::ScopedColor red(1,0,0);
+        gl::drawStrokedRect(tex->getBounds());
+    }
 }
 
 void SceneText::generateTexture()
 {
     tex = gl::Texture::create( textBox.render() );
+}
+
+void SceneText::adjustWidthAndAlignment( int newWidth, TextBox::Alignment alignment )
+{
+    switch (alignment) {
+        case TextBox::Alignment::LEFT:
+            width = newWidth;
+            break;
+        case TextBox::Alignment::CENTER:
+            x = x - .5 * (newWidth - width);
+            width = newWidth;
+            break;
+        case TextBox::Alignment::RIGHT:
+            x = x + width - newWidth;
+            width = newWidth;
+            break;
+    }
+    textBox.setAlignment(  TextBox::Alignment::CENTER );
+    textBox.setSize( ivec2(width,textBox.getSize().y) );
 }
 
 };
