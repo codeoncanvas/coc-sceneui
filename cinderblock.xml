@@ -2,7 +2,7 @@
 <cinder>
 <block
 	name="CoC-SceneUI"
-	id=""
+	id="cc.codeoncanvas.sceneui"
 	author=""
 	summary=""
 	license=""
