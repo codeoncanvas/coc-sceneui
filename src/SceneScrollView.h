@@ -62,6 +62,8 @@ public:
 
 	ci::vec2 screenToLocalContainer( ci::vec2 p );
 
+	float timeElapsed;
+
 };
 
 };

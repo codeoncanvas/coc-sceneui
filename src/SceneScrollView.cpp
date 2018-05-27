@@ -11,7 +11,7 @@
 
 #include "SceneScrollView.h"
 #include "cocGLUtils.h"
-#include "Globals.h"
+#include "cinder/app/App.h"
 
 namespace coc {
 
@@ -21,7 +21,8 @@ using namespace std;
 
 SceneScrollView::SceneScrollView(std::string objID) :
 coc::scene::Object(objID),
-fboClearColor(1,1,1,1) {
+fboClearColor(1,1,1,1),
+timeElapsed(0) {
     //
 }
 
@@ -97,8 +98,25 @@ void SceneScrollView::update() {
             button->reset();
         }
     }
-    
-    coc::ScrollView::update( SystemTimeDelta() );
+
+    //----------------------------------------------------------
+
+    float timeDelta = 1.0 / 60.0; // default.
+    if(true) { // use system time.
+        float timeElapsedPrev = timeElapsed;
+        timeElapsed = ci::app::getElapsedSeconds();
+        timeDelta = timeElapsed - timeElapsedPrev;
+
+        if(ci::app::getElapsedFrames() == 1) {
+            // the first timeDelta is always huge,
+            // because it takes a while to load assets etc.
+            // so for the first frame, make timeDelta zero.
+
+            timeDelta = 0;
+        }
+    }
+
+    coc::ScrollView::update( timeDelta );
     
     if(bShowing == false) {
         return;
